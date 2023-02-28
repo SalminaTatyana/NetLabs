@@ -1,0 +1,33 @@
+﻿<Window x:Class="Lab2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="345*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="87*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="623*"/>
+            <ColumnDefinition Width="177*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="ISO 8859-5" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="10,41,0,0" Text="Введите текст" TextWrapping="Wrap" Width="320" Name="inText" Height="192" VerticalAlignment="Top"/>
+        <Button Content="Закодировать" HorizontalAlignment="Left" Margin="335,149,0,0" VerticalAlignment="Top" Click="Code"/>
+        <ListBox Margin="451,41,10,10" Name="outText" Grid.ColumnSpan="2" Grid.RowSpan="3"/>
+        <Button Content="txt" HorizontalAlignment="Left" Margin="335,174,0,0" Click="SaveTxt" Width="81" Height="23" VerticalAlignment="Top"/>
+        <Button Content="bin" HorizontalAlignment="Left" Margin="335,202,0,0" Click="SaveBin" Width="81" Height="24" VerticalAlignment="Top"/>
+        <Button Content="Раскодировать" HorizontalAlignment="Left" Margin="335,231,0,0" VerticalAlignment="Top" Click="Decode"/>
+        <ListBox HorizontalAlignment="Left" Margin="10,268,0,10" Width="320" Name="histoty" Grid.RowSpan="3"/>
+        <Label Content="История ввода" HorizontalAlignment="Left" Margin="10,238,0,0" VerticalAlignment="Top" />
+        <TextBox HorizontalAlignment="Left" Margin="334,48,0,0" Text="Введите порт" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" PreviewTextInput="NumberValidationTextBox"/>
+        <Button Content="Подключиться" HorizontalAlignment="Left" Margin="334,117,0,0" VerticalAlignment="Top" Width="112" Click="UdpSend"/>
+        <TextBox HorizontalAlignment="Left" Margin="334,94,0,0" Text="Введите ip адрес" TextWrapping="Wrap" VerticalAlignment="Top" Width="112"/>
+        <TextBox HorizontalAlignment="Left" Margin="334,71,0,0" Text="Введите порт" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" PreviewTextInput="NumberValidationTextBox"/>
+    </Grid>
+</Window>
