@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Institute\\Сети и телекоммуникации\\Labs\\Lab2\\Lab2.csproj",
+      "projectUniqueName": "C:\\Institute\\Сети и телекоммуникации\\NetworksAndTelecommunicationsLabs\\Lab2\\Lab2.csproj",
       "projectName": "Lab2",
-      "projectPath": "C:\\Institute\\Сети и телекоммуникации\\Labs\\Lab2\\Lab2.csproj",
+      "projectPath": "C:\\Institute\\Сети и телекоммуникации\\NetworksAndTelecommunicationsLabs\\Lab2\\Lab2.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "C:\\Institute\\Сети и телекоммуникации\\Labs\\Lab2\\obj\\",
+      "outputPath": "C:\\Institute\\Сети и телекоммуникации\\NetworksAndTelecommunicationsLabs\\Lab2\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

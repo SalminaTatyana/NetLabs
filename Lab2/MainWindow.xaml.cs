@@ -15,6 +15,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Text.RegularExpressions;
 using System.Net;
+using System.Net.Sockets;
+using System.Globalization;
 
 namespace Lab2
 {
@@ -23,10 +25,9 @@ namespace Lab2
     /// </summary>
     public partial class MainWindow : Window
     {
-       
         public MainWindow()
         {
-            InitializeComponent();
+           InitializeComponent();
         }
 
         Dictionary<int, char> DeISO = new Dictionary<int, char>()
@@ -411,9 +412,7 @@ namespace Lab2
         List<byte[]> allStrBin = new List<byte[]>();
         IPAddress localAddress = IPAddress.Parse("127.0.0.1");
         int localPort = 55555;
-        int remotePort = 77777;
-
-
+        int remotePort = 60000;
         private async void SaveTxt(object sender, RoutedEventArgs e)
         {
             Microsoft.Win32.SaveFileDialog dlg = new Microsoft.Win32.SaveFileDialog();
@@ -534,16 +533,162 @@ namespace Lab2
             e.Handled = regex.IsMatch(e.Text);
         }
 
-        private void UdpSend(object sender, RoutedEventArgs e)
+        private async void SaveUDPData(object sender, RoutedEventArgs e)
         {
             try
             {
+                localAddress = IPAddress.Parse(ip.Text);
+                remotePort = Int32.Parse(port.Text);
+               
+                if (Int32.Parse(port.Text) > 65535)
+                {
+                    throw new OverflowException("Слишком большое число в удаленном порте. Используется удаленный порт не более 65535");
+                }
+                saveUDPDataBtn.IsEnabled = false;
+                sendUDPDataBtn.IsEnabled = true;
+                ip.IsEnabled = false;
+                port.IsEnabled = false;
 
             }
-            catch (Exception)
+            catch (ArgumentNullException ex)
             {
+                if (String.IsNullOrEmpty(ip.Text))
+                {
+                    histoty.Items.Add("Ip адрес не введен, введите Ip адрес.");
+                }
+                if (String.IsNullOrEmpty(portLocal.Text))
+                {
+                    histoty.Items.Add("Локальный порт не введен, введите локальный порт");
+                }
+                if (String.IsNullOrEmpty(port.Text))
+                {
+                    histoty.Items.Add("Удаленный порт не введен, введите локальный порт");
+                }
+            } 
+            catch (FormatException ex)
+            {
+                if (ex.TargetSite.DeclaringType.Name== "IPAddressParser")
+                {
+                    histoty.Items.Add("Ip адрес имеет неправильный тип, введите Ip адрес по примеру: 127.0.0.1");
 
-                throw;
+                }
+                if (ex.TargetSite.DeclaringType.Name == "Number")
+                {
+                    histoty.Items.Add("Порты имеют неправильный тип, введите порты по примеру: 55555");
+
+                }
+
+            }
+            catch (OverflowException ex)
+            {
+                histoty.Items.Add(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                histoty.Items.Add(ex.Message);
+            }
+        }
+        // отправка сообщений
+        async Task ReceiveMessageAsync()
+        {
+            string formattedDate = DateTime.Now.ToString("dd.MM.yyyy_hh-mm-ss");
+            string path = formattedDate + ".txt";
+            using UdpClient receiver = new UdpClient(localPort);
+            while (true)
+            {
+                string str = "";
+                string strCode = "";
+                string strBin = "";
+                string strDecode = "";
+
+                // получаем данные
+                var result = await receiver.ReceiveAsync();
+                var message = result.Buffer;
+                // выводим сообщение
+                foreach (var item in message)
+                {
+                    str = str + item.ToString() + " ";
+                    strCode = strCode + (char)item;
+                    strBin = strBin + Convert.ToString(item,2) + " ";
+                    strDecode = strDecode + DeISO[item]; 
+                }
+                outText.Items.Add(str);
+                outText.Items.Add(strBin);
+                outText.Items.Add(strCode);
+                outText.Items.Add(strDecode);
+                
+                using (StreamWriter writer = new StreamWriter(path, true))
+                {
+                        await writer.WriteLineAsync(strCode);
+                }
+            }
+        }
+        // отправка сообщений в группу
+        async Task SendMessageAsync()
+        {
+            using UdpClient sender = new UdpClient();
+            string str = inText.Text;
+            byte[] codeStrBin = new byte[str.Length];
+            int j = 0;
+            foreach (char item in str)
+            {
+                if (ISO.ContainsKey(item))
+                {
+                    codeStrBin[j] = (byte)ISO[item];
+                    j = j + 1;
+
+                }
+            }
+            await sender.SendAsync(codeStrBin, codeStrBin.Length, new IPEndPoint(localAddress, remotePort)); 
+        }
+
+        private async void SendUDPData(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                await SendMessageAsync();
+                
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                histoty.Items.Add("Удаленный порт слишком большой, введите порт от 1024 до 65535");
+            }
+        }
+
+        private async void SaveLokalPort(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+               
+                localPort = Int32.Parse(portLocal.Text);
+                
+                if (Int32.Parse(portLocal.Text) > 65535)
+                {
+                    throw new OverflowException("Слишком большое число в локальном порте. Используется локальный порт не более 65535");
+                }
+                saveUDPDataBtn.IsEnabled = true;
+                ip.IsEnabled = true;
+                portLocal.IsEnabled = false;
+                port.IsEnabled = true;
+                saveLokalPort.IsEnabled = false;
+                await ReceiveMessageAsync();
+
+            }
+            catch (ArgumentNullException ex)
+            {
+                histoty.Items.Add("Локальный порт не введен, введите локальный порт");
+            }
+            catch (FormatException ex)
+            {
+                histoty.Items.Add("Локальный порт имеет неправильный тип, введите порт по примеру: 55555");
+            }
+            catch (OverflowException ex)
+            {
+                histoty.Items.Add(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                histoty.Items.Add(ex.Message);
             }
         }
     }
