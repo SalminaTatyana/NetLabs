@@ -1,0 +1,32 @@
+C:\Users\ti.salmina\Desktop\NetworksAndTelecommunicationsLabs-Lab2\ServerTCP\bin\Debug\net5.0\ServerTCP.exe
+C:\Users\ti.salmina\Desktop\NetworksAndTelecommunicationsLabs-Lab2\ServerTCP\bin\Debug\net5.0\ServerTCP.deps.json
+C:\Users\ti.salmina\Desktop\NetworksAndTelecommunicationsLabs-Lab2\ServerTCP\bin\Debug\net5.0\ServerTCP.runtimeconfig.json
+C:\Users\ti.salmina\Desktop\NetworksAndTelecommunicationsLabs-Lab2\ServerTCP\bin\Debug\net5.0\ServerTCP.runtimeconfig.dev.json
+C:\Users\ti.salmina\Desktop\NetworksAndTelecommunicationsLabs-Lab2\ServerTCP\bin\Debug\net5.0\ServerTCP.dll
+C:\Users\ti.salmina\Desktop\NetworksAndTelecommunicationsLabs-Lab2\ServerTCP\bin\Debug\net5.0\ref\ServerTCP.dll
+C:\Users\ti.salmina\Desktop\NetworksAndTelecommunicationsLabs-Lab2\ServerTCP\bin\Debug\net5.0\ServerTCP.pdb
+C:\Users\ti.salmina\Desktop\NetworksAndTelecommunicationsLabs-Lab2\ServerTCP\obj\Debug\net5.0\ServerTCP.csproj.AssemblyReference.cache
+C:\Users\ti.salmina\Desktop\NetworksAndTelecommunicationsLabs-Lab2\ServerTCP\obj\Debug\net5.0\ServerTCP.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ti.salmina\Desktop\NetworksAndTelecommunicationsLabs-Lab2\ServerTCP\obj\Debug\net5.0\ServerTCP.AssemblyInfoInputs.cache
+C:\Users\ti.salmina\Desktop\NetworksAndTelecommunicationsLabs-Lab2\ServerTCP\obj\Debug\net5.0\ServerTCP.AssemblyInfo.cs
+C:\Users\ti.salmina\Desktop\NetworksAndTelecommunicationsLabs-Lab2\ServerTCP\obj\Debug\net5.0\ServerTCP.csproj.CoreCompileInputs.cache
+C:\Users\ti.salmina\Desktop\NetworksAndTelecommunicationsLabs-Lab2\ServerTCP\obj\Debug\net5.0\ServerTCP.dll
+C:\Users\ti.salmina\Desktop\NetworksAndTelecommunicationsLabs-Lab2\ServerTCP\obj\Debug\net5.0\ref\ServerTCP.dll
+C:\Users\ti.salmina\Desktop\NetworksAndTelecommunicationsLabs-Lab2\ServerTCP\obj\Debug\net5.0\ServerTCP.pdb
+C:\Users\ti.salmina\Desktop\NetworksAndTelecommunicationsLabs-Lab2\ServerTCP\obj\Debug\net5.0\ServerTCP.genruntimeconfig.cache
+C:\Institute\Сети и телекоммуникации\NetworksAndTelecommunicationsLabs\ServerTCP\bin\Debug\net5.0\ServerTCP.exe
+C:\Institute\Сети и телекоммуникации\NetworksAndTelecommunicationsLabs\ServerTCP\bin\Debug\net5.0\ServerTCP.deps.json
+C:\Institute\Сети и телекоммуникации\NetworksAndTelecommunicationsLabs\ServerTCP\bin\Debug\net5.0\ServerTCP.runtimeconfig.json
+C:\Institute\Сети и телекоммуникации\NetworksAndTelecommunicationsLabs\ServerTCP\bin\Debug\net5.0\ServerTCP.runtimeconfig.dev.json
+C:\Institute\Сети и телекоммуникации\NetworksAndTelecommunicationsLabs\ServerTCP\bin\Debug\net5.0\ServerTCP.dll
+C:\Institute\Сети и телекоммуникации\NetworksAndTelecommunicationsLabs\ServerTCP\bin\Debug\net5.0\ref\ServerTCP.dll
+C:\Institute\Сети и телекоммуникации\NetworksAndTelecommunicationsLabs\ServerTCP\bin\Debug\net5.0\ServerTCP.pdb
+C:\Institute\Сети и телекоммуникации\NetworksAndTelecommunicationsLabs\ServerTCP\obj\Debug\net5.0\ServerTCP.csproj.AssemblyReference.cache
+C:\Institute\Сети и телекоммуникации\NetworksAndTelecommunicationsLabs\ServerTCP\obj\Debug\net5.0\ServerTCP.GeneratedMSBuildEditorConfig.editorconfig
+C:\Institute\Сети и телекоммуникации\NetworksAndTelecommunicationsLabs\ServerTCP\obj\Debug\net5.0\ServerTCP.AssemblyInfoInputs.cache
+C:\Institute\Сети и телекоммуникации\NetworksAndTelecommunicationsLabs\ServerTCP\obj\Debug\net5.0\ServerTCP.AssemblyInfo.cs
+C:\Institute\Сети и телекоммуникации\NetworksAndTelecommunicationsLabs\ServerTCP\obj\Debug\net5.0\ServerTCP.csproj.CoreCompileInputs.cache
+C:\Institute\Сети и телекоммуникации\NetworksAndTelecommunicationsLabs\ServerTCP\obj\Debug\net5.0\ServerTCP.dll
+C:\Institute\Сети и телекоммуникации\NetworksAndTelecommunicationsLabs\ServerTCP\obj\Debug\net5.0\ref\ServerTCP.dll
+C:\Institute\Сети и телекоммуникации\NetworksAndTelecommunicationsLabs\ServerTCP\obj\Debug\net5.0\ServerTCP.pdb
+C:\Institute\Сети и телекоммуникации\NetworksAndTelecommunicationsLabs\ServerTCP\obj\Debug\net5.0\ServerTCP.genruntimeconfig.cache

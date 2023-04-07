@@ -1,0 +1,46 @@
+C:\Users\ti.salmina\Desktop\NetworksAndTelecommunicationsLabs-Lab2\Lab3\bin\Debug\net5.0-windows\Lab3.exe
+C:\Users\ti.salmina\Desktop\NetworksAndTelecommunicationsLabs-Lab2\Lab3\bin\Debug\net5.0-windows\Lab3.deps.json
+C:\Users\ti.salmina\Desktop\NetworksAndTelecommunicationsLabs-Lab2\Lab3\bin\Debug\net5.0-windows\Lab3.runtimeconfig.json
+C:\Users\ti.salmina\Desktop\NetworksAndTelecommunicationsLabs-Lab2\Lab3\bin\Debug\net5.0-windows\Lab3.runtimeconfig.dev.json
+C:\Users\ti.salmina\Desktop\NetworksAndTelecommunicationsLabs-Lab2\Lab3\bin\Debug\net5.0-windows\Lab3.dll
+C:\Users\ti.salmina\Desktop\NetworksAndTelecommunicationsLabs-Lab2\Lab3\bin\Debug\net5.0-windows\ref\Lab3.dll
+C:\Users\ti.salmina\Desktop\NetworksAndTelecommunicationsLabs-Lab2\Lab3\bin\Debug\net5.0-windows\Lab3.pdb
+C:\Users\ti.salmina\Desktop\NetworksAndTelecommunicationsLabs-Lab2\Lab3\obj\Debug\net5.0-windows\Lab3.csproj.AssemblyReference.cache
+C:\Users\ti.salmina\Desktop\NetworksAndTelecommunicationsLabs-Lab2\Lab3\obj\Debug\net5.0-windows\MVVM\View\MainWindow.g.cs
+C:\Users\ti.salmina\Desktop\NetworksAndTelecommunicationsLabs-Lab2\Lab3\obj\Debug\net5.0-windows\App.g.cs
+C:\Users\ti.salmina\Desktop\NetworksAndTelecommunicationsLabs-Lab2\Lab3\obj\Debug\net5.0-windows\Lab3_MarkupCompile.cache
+C:\Users\ti.salmina\Desktop\NetworksAndTelecommunicationsLabs-Lab2\Lab3\obj\Debug\net5.0-windows\Lab3_MarkupCompile.lref
+C:\Users\ti.salmina\Desktop\NetworksAndTelecommunicationsLabs-Lab2\Lab3\obj\Debug\net5.0-windows\MVVM\View\MainWindow.baml
+C:\Users\ti.salmina\Desktop\NetworksAndTelecommunicationsLabs-Lab2\Lab3\obj\Debug\net5.0-windows\Lab3.g.resources
+C:\Users\ti.salmina\Desktop\NetworksAndTelecommunicationsLabs-Lab2\Lab3\obj\Debug\net5.0-windows\Lab3.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ti.salmina\Desktop\NetworksAndTelecommunicationsLabs-Lab2\Lab3\obj\Debug\net5.0-windows\Lab3.AssemblyInfoInputs.cache
+C:\Users\ti.salmina\Desktop\NetworksAndTelecommunicationsLabs-Lab2\Lab3\obj\Debug\net5.0-windows\Lab3.AssemblyInfo.cs
+C:\Users\ti.salmina\Desktop\NetworksAndTelecommunicationsLabs-Lab2\Lab3\obj\Debug\net5.0-windows\Lab3.csproj.CoreCompileInputs.cache
+C:\Users\ti.salmina\Desktop\NetworksAndTelecommunicationsLabs-Lab2\Lab3\obj\Debug\net5.0-windows\Lab3.dll
+C:\Users\ti.salmina\Desktop\NetworksAndTelecommunicationsLabs-Lab2\Lab3\obj\Debug\net5.0-windows\ref\Lab3.dll
+C:\Users\ti.salmina\Desktop\NetworksAndTelecommunicationsLabs-Lab2\Lab3\obj\Debug\net5.0-windows\Lab3.pdb
+C:\Users\ti.salmina\Desktop\NetworksAndTelecommunicationsLabs-Lab2\Lab3\obj\Debug\net5.0-windows\Lab3.genruntimeconfig.cache
+C:\Users\ti.salmina\Desktop\NetworksAndTelecommunicationsLabs-Lab2\Lab3\obj\Debug\net5.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\Institute\Сети и телекоммуникации\NetworksAndTelecommunicationsLabs\Lab3\bin\Debug\net5.0-windows\Lab3.exe
+C:\Institute\Сети и телекоммуникации\NetworksAndTelecommunicationsLabs\Lab3\bin\Debug\net5.0-windows\Lab3.deps.json
+C:\Institute\Сети и телекоммуникации\NetworksAndTelecommunicationsLabs\Lab3\bin\Debug\net5.0-windows\Lab3.runtimeconfig.json
+C:\Institute\Сети и телекоммуникации\NetworksAndTelecommunicationsLabs\Lab3\bin\Debug\net5.0-windows\Lab3.runtimeconfig.dev.json
+C:\Institute\Сети и телекоммуникации\NetworksAndTelecommunicationsLabs\Lab3\bin\Debug\net5.0-windows\Lab3.dll
+C:\Institute\Сети и телекоммуникации\NetworksAndTelecommunicationsLabs\Lab3\bin\Debug\net5.0-windows\ref\Lab3.dll
+C:\Institute\Сети и телекоммуникации\NetworksAndTelecommunicationsLabs\Lab3\bin\Debug\net5.0-windows\Lab3.pdb
+C:\Institute\Сети и телекоммуникации\NetworksAndTelecommunicationsLabs\Lab3\obj\Debug\net5.0-windows\Lab3.csproj.AssemblyReference.cache
+C:\Institute\Сети и телекоммуникации\NetworksAndTelecommunicationsLabs\Lab3\obj\Debug\net5.0-windows\MVVM\View\MainWindow.g.cs
+C:\Institute\Сети и телекоммуникации\NetworksAndTelecommunicationsLabs\Lab3\obj\Debug\net5.0-windows\App.g.cs
+C:\Institute\Сети и телекоммуникации\NetworksAndTelecommunicationsLabs\Lab3\obj\Debug\net5.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\Institute\Сети и телекоммуникации\NetworksAndTelecommunicationsLabs\Lab3\obj\Debug\net5.0-windows\Lab3_MarkupCompile.cache
+C:\Institute\Сети и телекоммуникации\NetworksAndTelecommunicationsLabs\Lab3\obj\Debug\net5.0-windows\Lab3_MarkupCompile.lref
+C:\Institute\Сети и телекоммуникации\NetworksAndTelecommunicationsLabs\Lab3\obj\Debug\net5.0-windows\MVVM\View\MainWindow.baml
+C:\Institute\Сети и телекоммуникации\NetworksAndTelecommunicationsLabs\Lab3\obj\Debug\net5.0-windows\Lab3.g.resources
+C:\Institute\Сети и телекоммуникации\NetworksAndTelecommunicationsLabs\Lab3\obj\Debug\net5.0-windows\Lab3.GeneratedMSBuildEditorConfig.editorconfig
+C:\Institute\Сети и телекоммуникации\NetworksAndTelecommunicationsLabs\Lab3\obj\Debug\net5.0-windows\Lab3.AssemblyInfoInputs.cache
+C:\Institute\Сети и телекоммуникации\NetworksAndTelecommunicationsLabs\Lab3\obj\Debug\net5.0-windows\Lab3.AssemblyInfo.cs
+C:\Institute\Сети и телекоммуникации\NetworksAndTelecommunicationsLabs\Lab3\obj\Debug\net5.0-windows\Lab3.csproj.CoreCompileInputs.cache
+C:\Institute\Сети и телекоммуникации\NetworksAndTelecommunicationsLabs\Lab3\obj\Debug\net5.0-windows\Lab3.dll
+C:\Institute\Сети и телекоммуникации\NetworksAndTelecommunicationsLabs\Lab3\obj\Debug\net5.0-windows\ref\Lab3.dll
+C:\Institute\Сети и телекоммуникации\NetworksAndTelecommunicationsLabs\Lab3\obj\Debug\net5.0-windows\Lab3.pdb
+C:\Institute\Сети и телекоммуникации\NetworksAndTelecommunicationsLabs\Lab3\obj\Debug\net5.0-windows\Lab3.genruntimeconfig.cache
