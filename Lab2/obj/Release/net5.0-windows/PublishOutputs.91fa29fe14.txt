@@ -1,0 +1,5 @@
+C:\Institute\Сети и телекоммуникации\NetworksAndTelecommunicationsLabs\Lab2\bin\Release\net5.0-windows\publish\Lab2.exe
+C:\Institute\Сети и телекоммуникации\NetworksAndTelecommunicationsLabs\Lab2\bin\Release\net5.0-windows\publish\Lab2.dll
+C:\Institute\Сети и телекоммуникации\NetworksAndTelecommunicationsLabs\Lab2\bin\Release\net5.0-windows\publish\Lab2.deps.json
+C:\Institute\Сети и телекоммуникации\NetworksAndTelecommunicationsLabs\Lab2\bin\Release\net5.0-windows\publish\Lab2.runtimeconfig.json
+C:\Institute\Сети и телекоммуникации\NetworksAndTelecommunicationsLabs\Lab2\bin\Release\net5.0-windows\publish\Lab2.pdb

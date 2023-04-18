@@ -15,6 +15,9 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Text.RegularExpressions;
 using System.Net;
+using System.Net.Sockets;
+using System.Globalization;
+using System.Text.Json;
 
 namespace Lab2
 {
@@ -23,10 +26,10 @@ namespace Lab2
     /// </summary>
     public partial class MainWindow : Window
     {
-       
         public MainWindow()
         {
-            InitializeComponent();
+           InitializeComponent();
+           Setting();
         }
 
         Dictionary<int, char> DeISO = new Dictionary<int, char>()
@@ -409,43 +412,16 @@ namespace Lab2
         };
         List<string> allStrTxt = new List<string>();
         List<byte[]> allStrBin = new List<byte[]>();
-        IPAddress localAddress = IPAddress.Parse("127.0.0.1");
-        int localPort = 55555;
-        int remotePort = 77777;
-
-
-        private async void SaveTxt(object sender, RoutedEventArgs e)
-        {
-            Microsoft.Win32.SaveFileDialog dlg = new Microsoft.Win32.SaveFileDialog();
-            dlg.FileName = "Document";
-            dlg.DefaultExt = ".text";
-            dlg.Filter = "Text documents (.txt)|*.txt";
-
-            // Show save file dialog box
-            Nullable<bool> result = dlg.ShowDialog();
-
-            // Process save file dialog box results
-            if (result == true)
-            {
-                string path = dlg.FileName;
-                using (StreamWriter writer = new StreamWriter(path, true))
-                {
-                    foreach (var item in allStrTxt)
-                    {
-                        await writer.WriteLineAsync(item);
-                    }
-                }
-                allStrTxt.Clear();
-            }
-
-        }
-
+        IPAddress localAddress;
+        int localPort;
+        int remotePort;
+        
         private void SaveBin(object sender, RoutedEventArgs e)
         {
             Microsoft.Win32.SaveFileDialog dlgBin = new Microsoft.Win32.SaveFileDialog();
             dlgBin.FileName = "Document"; // Default file name
             dlgBin.DefaultExt = ".bin"; // Default file extension
-            dlgBin.Filter = "Text documents (.bin)|*.bin"; // Filter files by extension
+            dlgBin.Filter = "Text documents (.txt)|*.txt"; // Filter files by extension
 
             // Show save file dialog box
             Nullable<bool> result = dlgBin.ShowDialog();
@@ -464,87 +440,206 @@ namespace Lab2
                 allStrBin.Clear();
             }
         }
-
-        private void Code(object sender, RoutedEventArgs e)
+        public async void Setting()
         {
+            try
+            {
+                using (FileStream fs = new FileStream("appsetting.json", FileMode.OpenOrCreate))
+                {
+                    Connection connection = await JsonSerializer.DeserializeAsync<Connection>(fs);
+                    if (!String.IsNullOrEmpty(connection.ip))
+                    {
+                        localAddress = IPAddress.Parse(connection.ip);
+                        remotePort = connection.remotePort;
+                        localPort = connection.localPort;
+                        ip.Text = localAddress.ToString();
+                        port.Text = remotePort.ToString();
+                        portLocal.Text = localPort.ToString();
+                    }
+                }
+            }
+            catch (JsonException ex)
+            {
+
+                histoty.Items.Add("Ошибка считывания json");
+            }
+            catch (Exception ex)
+            {
+
+                histoty.Items.Add(ex);
+            }
+
+        }
+        
+        private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[0-9]");
+            e.Handled = !regex.IsMatch(e.Text);
+        }
+        private void IPValidationTextBox(object sender, TextCompositionEventArgs e)
+        {
+            bool isHandled = true;
+            Regex regex2 = new Regex("[0-9.]");
+            if (regex2.IsMatch(e.Text))
+            {
+                isHandled = false;
+            }
+            e.Handled = isHandled;
+        }
+        private async void OnKeyDownHandler(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Return)
+            {
+                await SendMessageAsync();
+            }
+        }
+        private async void SaveUDPData(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+               
+                localAddress = IPAddress.Parse(ip.Text);
+                remotePort = Int32.Parse(port.Text);
+                localPort = Int32.Parse(portLocal.Text);
+
+                if (Int32.Parse(portLocal.Text) > 65535)
+                {
+                    throw new OverflowException("Слишком большое число в локальном порте. Используется локальный порт не более 65535");
+                }
+                
+                if (Int32.Parse(port.Text) > 65535)
+                {
+                    throw new OverflowException("Слишком большое число в удаленном порте. Используется удаленный порт не более 65535");
+                }
+                saveUDPDataBtn.IsEnabled = false;
+                sendUDPDataBtn.IsEnabled = true;
+                inText.IsEnabled = true;
+                ip.IsEnabled = false;
+                port.IsEnabled = false;
+                histoty.Items.Add("Подключение");
+                await ReceiveMessageAsync();
+                
+            }
+            catch (ArgumentNullException ex)
+            {
+                if (String.IsNullOrEmpty(ip.Text))
+                {
+                    histoty.Items.Add("Ip адрес не введен, введите Ip адрес.");
+                }
+                if (String.IsNullOrEmpty(portLocal.Text))
+                {
+                    histoty.Items.Add("Локальный порт не введен, введите локальный порт");
+                }
+                if (String.IsNullOrEmpty(port.Text))
+                {
+                    histoty.Items.Add("Удаленный порт не введен, введите локальный порт");
+                }
+            } 
+            catch (FormatException ex)
+            {
+                if (ex.TargetSite.DeclaringType.Name== "IPAddressParser")
+                {
+                    histoty.Items.Add("Ip адрес имеет неправильный тип, введите Ip адрес по примеру: 127.0.0.1");
+
+                }
+                if (ex.TargetSite.DeclaringType.Name == "Number")
+                {
+                    histoty.Items.Add("Порты имеют неправильный тип, введите порты по примеру: 55555");
+
+                }
+
+            }
+            catch (OverflowException ex)
+            {
+                histoty.Items.Add(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                histoty.Items.Add(ex.Message);
+            }
+        }
+        // отправка сообщений
+        async Task ReceiveMessageAsync()
+        {
+            string formattedDate = DateTime.Now.ToString("dd.MM.yyyy_hh-mm-ss");
+            string path = formattedDate + ".txt";
+            using UdpClient receiver = new UdpClient(localPort);
+            histoty.Items.Add("Прослушивание порта "+localPort);
+            while (true)
+            {
+                string str = "";
+                string strCode = "";
+                string strBin = "";
+                
+                string strDecode = "";
+
+                // получаем данные
+                var result = await receiver.ReceiveAsync();
+                var message = result.Buffer;
+                byte[] strBin2 = new byte[message.Length];
+                // выводим сообщение
+                int j = 0;
+                foreach (var item in message)
+                {
+                    str = str + item.ToString() + " ";
+                    strCode = strCode + (char)item;
+                    strBin = strBin + Convert.ToString(item,2) + " ";
+                    strBin2[j] = item;
+                    strDecode = strDecode + DeISO[item];
+                    j++;
+                }
+
+                outText.Text = outText.Text+"Собеседник: " + strDecode+"\n";
+
+                using (BinaryWriter writer = new BinaryWriter(File.Open(path, FileMode.Append)))
+                {
+                    foreach (var item in strBin2)
+                    {
+                        writer.Write(item);
+                    }
+                }
+            }
+        }
+        // отправка сообщений в группу
+        async Task SendMessageAsync()
+        {
+            using UdpClient sender = new UdpClient();
             string str = inText.Text;
-            string codeStr = "";
             byte[] codeStrBin = new byte[str.Length];
-            string codeBin = "";
             int j = 0;
             foreach (char item in str)
             {
                 if (ISO.ContainsKey(item))
                 {
-                    codeStr += Convert.ToString(ISO[item], 2) + " ";
                     codeStrBin[j] = (byte)ISO[item];
-                    codeBin += codeStrBin[j] + " ";
                     j = j + 1;
 
                 }
             }
-            if (!String.IsNullOrEmpty(codeStr))
-            {
-                allStrTxt.Add(str);
-                allStrBin.Add(codeStrBin);
-                outText.Items.Add(codeStr);
-                outText.Items.Add(codeBin);
-            }
-            histoty.Items.Add(str);
+            outText.Text = outText.Text + "Вы: " + str + "\n";
+            await sender.SendAsync(codeStrBin, codeStrBin.Length, new IPEndPoint(localAddress, remotePort)); 
         }
 
-        private void Decode(object sender, RoutedEventArgs e)
-        {
-            Microsoft.Win32.OpenFileDialog dlgBin = new Microsoft.Win32.OpenFileDialog();
-            dlgBin.FileName = "Document"; // Default file name
-            dlgBin.DefaultExt = ".bin"; // Default file extension
-            dlgBin.Filter = "Text documents (.bin)|*.bin"; // Filter files by extension
-
-            // Show save file dialog box
-            Nullable<bool> result = dlgBin.ShowDialog();
-
-            if (result == true)
-            {
-                string path = dlgBin.FileName;
-                string codeStr = "";
-                // создаем объект BinaryWriter
-                using (BinaryReader reader = new BinaryReader(File.Open(path, FileMode.Open)))
-                {
-
-                    while (reader.PeekChar() > -1)
-                    {
-                        byte name = reader.ReadByte();
-                        if (DeISO.ContainsKey(name))
-                        {
-                            codeStr = codeStr + DeISO[name];
-                        }
-
-                    }
-                }
-                if (!String.IsNullOrEmpty(codeStr))
-                {
-                    outText.Items.Add(codeStr);
-                }
-            }
-
-        }
-        private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
-        {
-            Regex regex = new Regex("[^0-9]+");
-            e.Handled = regex.IsMatch(e.Text);
-        }
-
-        private void UdpSend(object sender, RoutedEventArgs e)
+        private async void SendUDPData(object sender, RoutedEventArgs e)
         {
             try
             {
-
+                await SendMessageAsync();
+                
             }
-            catch (Exception)
+            catch (ArgumentOutOfRangeException)
             {
-
-                throw;
+                histoty.Items.Add("Удаленный порт слишком большой, введите порт от 1024 до 65535");
             }
         }
+
+
+        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            portLocal.Visibility = Visibility.Visible;
+            localPortLable.Visibility = Visibility.Visible;
+        }
+
+
     }
 }

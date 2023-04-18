@@ -17,17 +17,18 @@
             <ColumnDefinition Width="177*"/>
         </Grid.ColumnDefinitions>
         <Label Content="ISO 8859-5" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="10,41,0,0" Text="Введите текст" TextWrapping="Wrap" Width="320" Name="inText" Height="192" VerticalAlignment="Top"/>
-        <Button Content="Закодировать" HorizontalAlignment="Left" Margin="335,149,0,0" VerticalAlignment="Top" Click="Code"/>
-        <ListBox Margin="451,41,10,10" Name="outText" Grid.ColumnSpan="2" Grid.RowSpan="3"/>
-        <Button Content="txt" HorizontalAlignment="Left" Margin="335,174,0,0" Click="SaveTxt" Width="81" Height="23" VerticalAlignment="Top"/>
-        <Button Content="bin" HorizontalAlignment="Left" Margin="335,202,0,0" Click="SaveBin" Width="81" Height="24" VerticalAlignment="Top"/>
-        <Button Content="Раскодировать" HorizontalAlignment="Left" Margin="335,231,0,0" VerticalAlignment="Top" Click="Decode"/>
+        <TextBox HorizontalAlignment="Left" Margin="10,41,0,0" Text="Введите текст" TextWrapping="Wrap" Width="320" Name="inText" Height="192" VerticalAlignment="Top" KeyDown="OnKeyDownHandler" IsEnabled="False"/>
+        <TextBox Margin="451,41,10,10" Name="outText" Grid.ColumnSpan="2" Grid.RowSpan="3" Background="Lavender" IsReadOnly="True"/>
         <ListBox HorizontalAlignment="Left" Margin="10,268,0,10" Width="320" Name="histoty" Grid.RowSpan="3"/>
         <Label Content="История ввода" HorizontalAlignment="Left" Margin="10,238,0,0" VerticalAlignment="Top" />
-        <TextBox HorizontalAlignment="Left" Margin="334,48,0,0" Text="Введите порт" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" PreviewTextInput="NumberValidationTextBox"/>
-        <Button Content="Подключиться" HorizontalAlignment="Left" Margin="334,117,0,0" VerticalAlignment="Top" Width="112" Click="UdpSend"/>
-        <TextBox HorizontalAlignment="Left" Margin="334,94,0,0" Text="Введите ip адрес" TextWrapping="Wrap" VerticalAlignment="Top" Width="112"/>
-        <TextBox HorizontalAlignment="Left" Margin="334,71,0,0" Text="Введите порт" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" PreviewTextInput="NumberValidationTextBox"/>
+        <TextBox Name="portLocal" HorizontalAlignment="Left" Margin="333,46,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" PreviewTextInput="NumberValidationTextBox" Visibility="Hidden" MaxLength="5"/>
+        <Button Content="Подключиться" HorizontalAlignment="Left" Margin="336,148,0,0" VerticalAlignment="Top" Width="110" Click="SaveUDPData" Name="saveUDPDataBtn"/>
+        <TextBox Name="ip" HorizontalAlignment="Left" Margin="335,125,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" MaxLength="12" PreviewTextInput="IPValidationTextBox"/>
+        <TextBox Name="port" HorizontalAlignment="Left" Margin="335,83,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" PreviewTextInput="NumberValidationTextBox" MaxLength="5"/>
+        <Label Content="Локальный порт" HorizontalAlignment="Left" Margin="334,23,0,0" VerticalAlignment="Top" Visibility="Hidden" Name="localPortLable"/>
+        <Label Content="Удаленный порт" HorizontalAlignment="Left" Margin="335,59,0,0" VerticalAlignment="Top" Height="24"/>
+        <Label Content="Ip адрес" HorizontalAlignment="Left" Margin="336,101,0,0" VerticalAlignment="Top" Height="24" />
+        <Button Content="Отправить" HorizontalAlignment="Left" Margin="336,173,0,0" VerticalAlignment="Top" Width="110" Click="SendUDPData" Name="sendUDPDataBtn" IsEnabled="False"/>
+        <CheckBox Content="На этот компьютер" HorizontalAlignment="Left" Margin="333,10,0,0" VerticalAlignment="Top" Checked="CheckBox_Checked"/>
     </Grid>
 </Window>
