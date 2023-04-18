@@ -41,10 +41,16 @@
             <ListView Height="380" ItemsSource="{Binding Messages}"/>
             <StackPanel Orientation="Horizontal">
                 <TextBox Height="55"
+                         Name="message"
                      VerticalContentAlignment="Center"
-                         Width="535" Text="{Binding Message , UpdateSourceTrigger=PropertyChanged}"/>
+                         Width="535" Text="{Binding Message , UpdateSourceTrigger=PropertyChanged}" >
+                    <TextBox.InputBindings>
+                        <KeyBinding Command="{Binding SendMessageCommand}" Key="Return"/>
+                    </TextBox.InputBindings>
+                </TextBox>
                 <Button Width="65" Content="Отправить
-                        " Command="{Binding SendMessageCommand}" HorizontalAlignment="Stretch" />
+                        " Name="btn" 
+                        Command="{Binding SendMessageCommand}" HorizontalAlignment="Stretch" Click="btn_Click" />
             </StackPanel>
             
         </StackPanel>

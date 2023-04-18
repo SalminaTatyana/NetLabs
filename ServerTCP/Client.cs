@@ -21,7 +21,7 @@ namespace ServerTCP
             _packetReader = new PacketReader(ClientSocet.GetStream());
             var opcode = _packetReader.ReadByte();
             Username = _packetReader.ReadMessage();
-            Console.WriteLine($"[{DateTime.Now}]:Пользователь {Username} подключен.");
+            Console.WriteLine($"[{DateTime.Now}] : Пользователь {Username} подключен.");
 
             Task.Run(()=>Process());
         }
@@ -37,8 +37,8 @@ namespace ServerTCP
                     {
                         case 5:
                             var msg = _packetReader.ReadMessage();
-                            Console.WriteLine($"[{DateTime.Now}]:{Username}:{msg}");
-                            Program.BroadcastMessage($"{Username}:{msg}");
+                            Console.WriteLine($"[{DateTime.Now}] : {Username} : {msg}");
+                            Program.BroadcastMessage($"{Username} : {msg}");
                             break;
                         default:
                             break;
@@ -46,7 +46,7 @@ namespace ServerTCP
                 }
                 catch (Exception)
                 {
-                    Console.WriteLine($"[{DateTime.Now}]:Пользователь {Username} отключен.");
+                    Console.WriteLine($"[{DateTime.Now}] : Пользователь {Username} отключен.");
                     Program.BroadcastDisconnect(UID.ToString());
                     ClientSocet.Close();
                     break;

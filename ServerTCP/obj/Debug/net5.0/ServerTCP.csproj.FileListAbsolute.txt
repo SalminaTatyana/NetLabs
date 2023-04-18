@@ -30,3 +30,18 @@ C:\Institute\Сети и телекоммуникации\NetworksAndTelecommuni
 C:\Institute\Сети и телекоммуникации\NetworksAndTelecommunicationsLabs\ServerTCP\obj\Debug\net5.0\ref\ServerTCP.dll
 C:\Institute\Сети и телекоммуникации\NetworksAndTelecommunicationsLabs\ServerTCP\obj\Debug\net5.0\ServerTCP.pdb
 C:\Institute\Сети и телекоммуникации\NetworksAndTelecommunicationsLabs\ServerTCP\obj\Debug\net5.0\ServerTCP.genruntimeconfig.cache
+C:\Users\kIT\Desktop\NetworksAndTelecommunicationsLabs\ServerTCP\bin\Debug\net5.0\ServerTCP.exe
+C:\Users\kIT\Desktop\NetworksAndTelecommunicationsLabs\ServerTCP\bin\Debug\net5.0\ServerTCP.deps.json
+C:\Users\kIT\Desktop\NetworksAndTelecommunicationsLabs\ServerTCP\bin\Debug\net5.0\ServerTCP.runtimeconfig.json
+C:\Users\kIT\Desktop\NetworksAndTelecommunicationsLabs\ServerTCP\bin\Debug\net5.0\ServerTCP.runtimeconfig.dev.json
+C:\Users\kIT\Desktop\NetworksAndTelecommunicationsLabs\ServerTCP\bin\Debug\net5.0\ServerTCP.dll
+C:\Users\kIT\Desktop\NetworksAndTelecommunicationsLabs\ServerTCP\bin\Debug\net5.0\ref\ServerTCP.dll
+C:\Users\kIT\Desktop\NetworksAndTelecommunicationsLabs\ServerTCP\bin\Debug\net5.0\ServerTCP.pdb
+C:\Users\kIT\Desktop\NetworksAndTelecommunicationsLabs\ServerTCP\obj\Debug\net5.0\ServerTCP.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kIT\Desktop\NetworksAndTelecommunicationsLabs\ServerTCP\obj\Debug\net5.0\ServerTCP.AssemblyInfoInputs.cache
+C:\Users\kIT\Desktop\NetworksAndTelecommunicationsLabs\ServerTCP\obj\Debug\net5.0\ServerTCP.AssemblyInfo.cs
+C:\Users\kIT\Desktop\NetworksAndTelecommunicationsLabs\ServerTCP\obj\Debug\net5.0\ServerTCP.csproj.CoreCompileInputs.cache
+C:\Users\kIT\Desktop\NetworksAndTelecommunicationsLabs\ServerTCP\obj\Debug\net5.0\ServerTCP.dll
+C:\Users\kIT\Desktop\NetworksAndTelecommunicationsLabs\ServerTCP\obj\Debug\net5.0\ref\ServerTCP.dll
+C:\Users\kIT\Desktop\NetworksAndTelecommunicationsLabs\ServerTCP\obj\Debug\net5.0\ServerTCP.pdb
+C:\Users\kIT\Desktop\NetworksAndTelecommunicationsLabs\ServerTCP\obj\Debug\net5.0\ServerTCP.genruntimeconfig.cache
