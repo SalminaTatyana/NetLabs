@@ -33,8 +33,16 @@ namespace Lab3.Net
                         Connection connection = await JsonSerializer.DeserializeAsync<Connection>(fs);
                         if (!String.IsNullOrEmpty(connection.ip))
                         {
-                            ip = connection.ip;
-                            port = connection.port;
+                            if (String.IsNullOrEmpty(ip))
+                            {
+                                ip = connection.ip;
+                            }
+                            if (port<1)
+                            {
+                                port = connection.port;
+                            }
+
+                            
 
                         }
                     }

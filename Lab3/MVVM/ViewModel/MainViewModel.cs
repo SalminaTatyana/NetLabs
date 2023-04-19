@@ -21,7 +21,7 @@ namespace Lab3.MVVM.ViewModel
         public RelayCommand ConnectToServerCommand { get; set; }
         public RelayCommand DisonnectToServerCommand { get; set; }
         public RelayCommand SendMessageCommand { get; set; }
-        private Server _server;
+        public Server _server;
         public string Username { get; set; }
         public string Message { get; set; }
         public string Ip { get; set; }
@@ -57,7 +57,7 @@ namespace Lab3.MVVM.ViewModel
             var user = Users.Where(x => x.UID == uid).FirstOrDefault();
             Application.Current.Dispatcher.Invoke(() => Users.Remove(user));
         }
-        private void MsgReceived()
+        public void MsgReceived()
         {
             var msg = _server.PacketReader.ReadMessage();
             Application.Current.Dispatcher.Invoke(() => Messages.Add(msg));

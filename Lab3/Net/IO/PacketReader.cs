@@ -11,6 +11,7 @@ namespace Lab3.Net.IO
     class PacketReader : BinaryReader
     {
         private NetworkStream _ns;
+        string path = DateTime.Now.ToString("dd.MM.yyyy_hh-mm-ss") + ".txt";
         Dictionary<int, char> DeISO = new Dictionary<int, char>()
         {
             {33,'!' },
@@ -217,22 +218,23 @@ namespace Lab3.Net.IO
         private string Decode(byte[] result)
         {
             string str = "";
+
             // выводим сообщение
-            try
+            foreach (var item in result)
+            {
+                str = str + DeISO[item];
+            }
+            using (BinaryWriter writer = new BinaryWriter(File.Open(path, FileMode.Append)))
             {
                 foreach (var item in result)
                 {
-                    str = str + DeISO[item];
-                }
-                return str;
-            }
-            catch (Exception ex)
-            {
+                    writer.Write(item);
 
-                return ex.Message;
+                }
+                writer.Write('\n');
             }
-            
-            
+            return str;
         }
     }
 }
+

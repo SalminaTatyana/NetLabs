@@ -20,7 +20,6 @@ C:\Institute\Сети и телекоммуникации\Labs\Lab2\obj\Debug\ne
 C:\Institute\Сети и телекоммуникации\Labs\Lab2\obj\Debug\net5.0-windows\ref\Lab2.dll
 C:\Institute\Сети и телекоммуникации\Labs\Lab2\obj\Debug\net5.0-windows\Lab2.pdb
 C:\Institute\Сети и телекоммуникации\Labs\Lab2\obj\Debug\net5.0-windows\Lab2.genruntimeconfig.cache
-C:\Institute\Сети и телекоммуникации\NetworksAndTelecommunicationsLabs\Lab2\obj\Debug\net5.0-windows\Lab2.csproj.AssemblyReference.cache
 C:\Institute\Сети и телекоммуникации\NetworksAndTelecommunicationsLabs\Lab2\obj\Debug\net5.0-windows\MainWindow.g.cs
 C:\Institute\Сети и телекоммуникации\NetworksAndTelecommunicationsLabs\Lab2\obj\Debug\net5.0-windows\App.g.cs
 C:\Institute\Сети и телекоммуникации\NetworksAndTelecommunicationsLabs\Lab2\obj\Debug\net5.0-windows\Lab2_MarkupCompile.cache
@@ -42,3 +41,4 @@ C:\Institute\Сети и телекоммуникации\NetworksAndTelecommuni
 C:\Institute\Сети и телекоммуникации\NetworksAndTelecommunicationsLabs\Lab2\obj\Debug\net5.0-windows\Lab2.AssemblyInfo.cs
 C:\Institute\Сети и телекоммуникации\NetworksAndTelecommunicationsLabs\Lab2\obj\Debug\net5.0-windows\Lab2.csproj.CoreCompileInputs.cache
 C:\Institute\Сети и телекоммуникации\NetworksAndTelecommunicationsLabs\Lab2\obj\Debug\net5.0-windows\Lab2.genruntimeconfig.cache
+C:\Institute\Сети и телекоммуникации\NetworksAndTelecommunicationsLabs\Lab2\obj\Debug\net5.0-windows\Lab2.csproj.AssemblyReference.cache
